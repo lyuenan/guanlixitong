@@ -1,0 +1,96 @@
+[{
+  "cId":1,
+  "cName":"教科辅导类",
+  "url":"#/educate",
+  "parent":null
+},{
+  "cId":2,
+  "cName":"名著",
+  "url":null,
+  "parent":null
+},{
+  "cId":3,
+  "cName":"考级",
+  "url":"#/kaoji",
+  "parent":null
+},{
+  "cId":4,
+  "cName":"生活",
+  "url":"#/category",
+  "parent":null
+},{
+  "cId":5,
+  "cName":"人文社科",
+  "url":null,
+  "parent":null
+},{
+  "cId":19,
+  "cName":"爱好比例",
+  "url":"#/pie",
+  "parent":null
+},{
+  "cId":6,
+  "cName":"幼儿图书",
+  "url":"#/chiMan",
+  "parent":1
+},{
+  "cId":7,
+  "cName":"小学",
+  "url":"#/priMan",
+  "parent":1
+},{
+  "cId":8,
+  "cName":"初中",
+  "url":"#/junMan",
+  "parent":1
+},{
+  "cId":9,
+  "cName":"高中",
+  "url":"#/senMan",
+  "parent":1
+},{
+  "cId":10,
+  "cName":"大学及以上",
+  "url":"#/uniMan",
+  "parent":1
+},{
+  "cId":11,
+  "cName":"世界名著",
+  "url":"#/shijieMan",
+  "parent":2
+},{
+  "cId":12,
+  "cName":"中国名著",
+  "url":"#/zhongguoMan",
+  "parent":2
+},{
+  "cId":15,
+  "cName":"英语",
+  "url":"#/englishMan",
+  "parent":3
+},{
+  "cId":16,
+  "cName":"会计",
+  "url":"#/kuaijiMan",
+  "parent":3
+},{
+  "cId":17,
+  "cName":"医学",
+  "url":"#/yixueMan",
+  "parent":3
+},{
+  "cId":18,
+  "cName":"建筑",
+  "url":"#/jianzhuMan",
+  "parent":3
+},{
+  "cId":20,
+  "cName":"关于最新",
+  "url":"#/publisher",
+  "parent":5
+},{
+  "cId":21,
+  "cName":"发布管理",
+  "url":"#/essay",
+  "parent":5
+}]

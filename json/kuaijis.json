@@ -1,0 +1,67 @@
+[{
+  "id":1001,
+  "name":"上岗证（会计证）",
+  "simple":"无",
+  "content":"会计从业资格证书； 会计电算化证 ",
+  "parent":null
+},{
+  "id":1002,
+  "name":"职称证",
+  "simple":"无",
+  "content":"助理会计师（初级）、会计师（中级）、高级会计师（高级）",
+  "parent":null
+},{
+  "id":1003,
+  "name":"执业资格证",
+  "simple":"CPA-PRC",
+  "content":"注册会计师",
+  "parent":null
+},{
+  "id":1004,
+  "name":"特许公认注册会计师",
+  "simple":"ACCA",
+  "content":"英国、欧洲及许多主要国家法定会计师资格",
+  "parent":null
+},{
+  "id":1005,
+  "name":"国际注册内部审计师",
+  "simple":"CIA",
+  "content":"无",
+  "parent":null
+},{
+  "id":1006,
+  "name":"英国国际会计师",
+  "simple":"AIA",
+  "content":"",
+  "parent":null
+},{
+  "id":1007,
+  "name":"美国注册会计师",
+  "simple":"CPA-US",
+  "content":"",
+  "parent":null
+},{
+  "id":1008,
+  "name":"英国特许管理会计师证书",
+  "simple":"CIMA",
+  "content":"",
+  "parent":null
+},{
+  "id":1009,
+  "name":"加拿大注册会计师",
+  "simple":"CGA",
+  "content":"",
+  "parent":null
+},{
+  "id":1010,
+  "name":"澳大利亚注册会计师",
+  "simple":"CPA-AS",
+  "content":"",
+  "parent":null
+},{
+  "id":1011,
+  "name":"美国注册管理会计师",
+  "simple":"CMA",
+  "content":"",
+  "parent":null
+}]

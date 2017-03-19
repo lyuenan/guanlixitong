@@ -1,0 +1,80 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US" ng-app="app">
+<head>
+	<meta charset="UTF-8" >
+	<title>图书管理系统</title>
+<!--jquery-->
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<!--bootstrap-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<!--angular-->
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-route.min.js"></script>
+<script type="text/javascript" src="js/angular-locale_zh-cn.js"></script>
+<!--highchars-->
+<script type="text/javascript" src="js/highcharts.js"></script>
+<script type="text/javascript" src="js/highcharts-3d.js"></script>
+
+<!--personal-->
+<script type="text/javascript" src="app.js"></script>
+<!--educate-->
+<script type="text/javascript" src="loads/educate/child/chiMan.js"></script>
+<script type="text/javascript" src="loads/educate/primary/priMan.js"></script>
+<script type="text/javascript" src="loads/educate/junior/junMan.js"></script>
+<script type="text/javascript" src="loads/educate/senior/senMan.js"></script>
+<script type="text/javascript" src="loads/educate/university/uniMan.js"></script>
+<!--mingzhu-->
+<script type="text/javascript" src="loads/mingzhu/shijieMan.js"></script>
+<script type="text/javascript" src="loads/mingzhu/zhongguoMan.js"></script>
+
+<script type="text/javascript" src="loads/kaoji/englishMan.js"></script>
+<script type="text/javascript" src="loads/kaoji/kuaijiMan.js"></script>
+
+<script type="text/javascript" src="loads/category/category.js"></script>
+<script type="text/javascript" src="loads/cms/cms.js"></script>
+<script type="text/javascript" src="loads/pie/pie.js"></script>
+
+
+
+</head>
+<body ng-controller="mainController">
+<div class="container">
+	<nav class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<div class="navbar-brand">
+				图书管理系统
+			</div>
+		</div>
+	</nav>
+
+	
+		<div class="row">
+		<!--功能区-->
+			<div class="col-xs-2">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="title">
+							图书分类
+						</div>
+					</div>
+					<div class="list-group">
+					<!--一级功能-->
+					<a class="list-group-item" href="javascript:void(0)" ng-repeat="item in config | filter:{parent:null}" ng-click="data.changeTabs(item.cId)">{{item.cName}}</a>
+					</div>
+				</div>
+			</div>
+			<!--内容-->
+			<div class="col-xs-10">
+				<!--二级功能-->
+				<ul class="nav nav-tabs" >
+					<li ng-repeat="item in data.tabs"   ng-click="data.changeCurrentTab($event)" class="{{$first?'active':''}}">
+						<a href="{{item.url}}">{{item.cName}}</a>
+					</li>
+				</ul>
+				<div ng-view></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

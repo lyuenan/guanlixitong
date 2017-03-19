@@ -1,0 +1,101 @@
+﻿
+<div class="collapse navbar-collapse">
+  <form class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+	  <select class="form-control" ng-model="data.search.key">
+	  	<option value="">请选择</option>
+	  	<option value="name">书名</option>
+	  	<option value="author">作者</option>
+	  </select>
+      <input type="text" ng-model="data.search.val" class="form-control" placeholder="Search" />
+    </div>
+    <button id="btn" type="submit" class="btn btn-primary" ng-click="data.searchUni()">搜索</button>
+  </form>
+</div>
+<!--信息列表-->
+<table class="table">
+  <thead>
+  	<tr>
+  		<td>编号</td>
+  		<td>书名</td>
+  		<td>作者</td>
+  		<td>出版社</td>
+  		<td>价格</td>
+  	</tr>
+  </thead>
+<style>
+	td span{
+		cursor:pointer;
+	}
+</style>
+  <tbody>
+  	<tr ng-repeat="item in data.universitys | filter:data.criteria">
+  		<td><input type="checkbox" ng-model="item.checked"></td>
+  		<td> 
+			{{item.name}} 
+			<span class="badge" ng-show="item.rank=='推荐'?true:false" ng-click="data.becomeMember(item.id)">
+			推荐
+			</span>
+		</td>
+  		<td>{{item.author}}</td>
+  		<td>{{item.publish}}</td>
+  		<td>{{item.price}}</td>
+  	</tr>
+  </tbody>
+</table>
+
+<!--操作栏-->
+<div style="position:fixed;bottom:20px">
+<div class="btn-group">
+   <button id="btn" class="btn btn-primary" ng-click="data.showAddModal()">添加</button>
+   <button id="btn" class="btn btn-primary"
+   ng-click="data.showUpdModal()">修改</button>
+   <button id="btn" class="btn btn-primary"
+   ng-click="data.delUni()">删除</button>
+   <button id="btn" class="btn btn-primary"
+   ng-click="data.becomeRead()">标为推荐</button>
+</div>
+</div>
+<!--模态框。弹框-->
+<div class="modal fade" id="uniModal" tabindex="-1" >
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+		<div class="modal-header">
+		    <button class="close" data-dismiss="modal">&times;</button>
+		    <h4 class="modal-title">
+				{{data.modalTitle}}
+			</h4>
+		</div>
+	<form action="javascript:void(0);" ng-submit="data.option=='upd'?data.updUni():data.addUni()">
+		<div class="modal-body">
+		    <div class="input-group">
+			  <span class="input-group-addon">书名</span>
+			  <input type="" class="form-control" ng-model="newUser.name"
+			  ng-readonly="data.option=='upd'?true:false">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">作者</span>
+			  <input type="" class="form-control"
+			  ng-model="newUser.author">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">出版社</span>
+			  <input type="" class="form-control"
+			  ng-model="newUser.publish">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">价格</span>
+			  <input type="" class="form-control"
+			  ng-model="newUser.price">
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary"
+			type="submit">提交</button>
+		    <button class="btn btn-primary" data-dismiss="modal">关闭</button>
+		</div>
+	</form>
+
+	    </div>
+	  </div>
+    </div>

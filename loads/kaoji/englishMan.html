@@ -1,0 +1,93 @@
+﻿
+<div class="collapse navbar-collapse">
+	<form action="javascript:void(0)" class="navbar-form navbar-left">
+		<div class="form-group">
+			<select name="" id="" class="form-control">
+				<option value="">请选择</option>
+				<option value="name">名称</option>
+				<option value="simple">简称</option>
+			</select>
+			<input type="text" class="form-control" placeholder="Search" />
+		</div>
+		<button id="btn" type="submit" class="btn btn-primary">搜索</button>
+	</form>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 " >
+	<ul class="media-list">
+		<li class="media well" ng-repeat="item in data.englishs">
+			<input type="checkbox" class="pull-left" 
+			ng-model = "item.checked"
+			style="margin:5px">
+			<a class="pull-left" href="">
+				<img class="media-object" alt="">
+			</a>
+			<div class="media-body">
+			  <h3>{{item.name}}</h3>
+			  简称：{{item.simple}}
+			  <br>
+			  内容：{{item.content}}
+			  <br>
+			  email：{{item.email}}
+			  <br>
+			  等级：{{item.rank}}
+			</div>
+		</li>
+	</ul>
+	</div>
+</div>
+
+<!--按钮组-->
+<div class="btn-group" style="position:fixed;bottom:20px">
+  <button id="btn" class="btn btn-primary" ng-click="data.showAddEng()">添加</button>
+  <button id="btn" class="btn btn-primary"
+  ng-click="data.delEng()">删除</button>
+  <button id="btn" class="btn btn-primary"
+  ng-click="data.showUpdEng()">修改</button>
+</div>
+
+<!--模态框。弹框-->
+<div class="modal fade" id="engModal" tabindex="-1" >
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+		<div class="modal-header">
+		    <button class="close" data-dismiss="modal">&times;</button>
+		    <h4 class="modal-title">
+				{{data.modalTitle}}
+			</h4>
+		</div>
+		<form action="javascript:void(0);" ng-submit="data.option=='upd'?data.updEng():data.addEng()">
+		<div class="modal-body">
+		    <div class="input-group">
+			  <span class="input-group-addon">名称</span>
+			  <input type="" ng-model="data.newEng.name" 
+			  ng-readonly="data.option=='upd'?true:false" 
+			  class="form-control">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">简称</span>
+			  <input type="" ng-model="data.newEng.simple" class="form-control">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">内容</span>
+			  <input type="" ng-model="data.newEng.content" class="form-control">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">email</span>
+			  <input type="" ng-model="data.newEng.email" class="form-control">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">级别</span>
+			  <input type="" ng-model="data.newEng.rank" class="form-control">
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary"
+			type="submit">提交</button>
+		    <button class="btn btn-primary" data-dismiss="modal">关闭</button>
+		</div>
+		</form>
+	</div>
+ </div>
+</div>
